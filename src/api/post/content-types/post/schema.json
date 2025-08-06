@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "Posts",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255,
+      "unique": false
+    },
+    "postSlug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "postPrimary": {
+      "type": "component",
+      "repeatable": false,
+      "component": "posts.post-primary-details",
+      "required": true
+    },
+    "postMetadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "posts.post-meta-data",
+      "required": true
+    },
+    "authorDetails": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "author.author-name"
+    }
+  }
+}

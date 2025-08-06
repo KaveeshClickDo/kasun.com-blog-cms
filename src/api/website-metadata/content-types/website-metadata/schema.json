@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "website_metadatas",
+  "info": {
+    "singularName": "website-metadata",
+    "pluralName": "website-metadatas",
+    "displayName": "Website Metadata"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "websiteName": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "favicon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "openGraphImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

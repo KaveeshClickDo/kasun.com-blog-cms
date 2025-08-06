@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_posts_post_meta_data",
+  "info": {
+    "displayName": "Post MetaData",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "metaDescription": {
+      "type": "text"
+    },
+    "postTitle": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "isFeatured": {
+      "type": "enumeration",
+      "enum": [
+        "YES",
+        "NO"
+      ],
+      "default": "NO"
+    }
+  }
+}
