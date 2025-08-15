@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_footer_add_social_media_handles",
+  "info": {
+    "displayName": "Add Social Media Handles",
+    "icon": "twitter"
+  },
+  "options": {},
+  "attributes": {
+    "socialMedia": {
+      "type": "enumeration",
+      "enum": [
+        "Twitter (X)",
+        "Linkedin",
+        "Instagram",
+        "YouTube",
+        "Facebook"
+      ]
+    },
+    "socialMediaLink": {
+      "type": "string"
+    }
+  }
+}

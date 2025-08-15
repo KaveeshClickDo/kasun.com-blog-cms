@@ -1,0 +1,51 @@
+{
+  "kind": "singleType",
+  "collectionName": "custom_footers",
+  "info": {
+    "singularName": "custom-footer",
+    "pluralName": "custom-footers",
+    "displayName": "Custom Footer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "footerImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "footerText": {
+      "type": "text"
+    },
+    "copyrightNotice": {
+      "type": "text"
+    },
+    "footerBgColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "footerQuickLinks": {
+      "type": "dynamiczone",
+      "components": [
+        "footer.add-quick-links"
+      ]
+    },
+    "footerSocialMedia": {
+      "type": "dynamiczone",
+      "components": [
+        "footer.add-social-media-handles"
+      ]
+    },
+    "footerFontColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    }
+  }
+}

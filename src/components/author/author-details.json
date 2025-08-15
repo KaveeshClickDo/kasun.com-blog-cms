@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_author_author_names",
+  "collectionName": "components_author_author_details",
   "info": {
-    "displayName": "Author Details",
-    "description": ""
+    "displayName": "Author Details"
   },
   "options": {},
   "attributes": {
@@ -10,12 +9,11 @@
       "type": "string"
     },
     "authorImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "type": "media",
+      "multiple": false
     },
     "authorRole": {
       "type": "string"

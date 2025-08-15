@@ -1,9 +1,8 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface AuthorAuthorName extends Struct.ComponentSchema {
-  collectionName: 'components_author_author_names';
+export interface AuthorAuthorDetails extends Struct.ComponentSchema {
+  collectionName: 'components_author_author_details';
   info: {
-    description: '';
     displayName: 'Author Details';
   };
   attributes: {
@@ -11,6 +10,45 @@ export interface AuthorAuthorName extends Struct.ComponentSchema {
     authorImage: Schema.Attribute.Media<'images'>;
     authorName: Schema.Attribute.String;
     authorRole: Schema.Attribute.String;
+  };
+}
+
+export interface FooterAddQuickLinks extends Struct.ComponentSchema {
+  collectionName: 'components_footer_add_quick_links';
+  info: {
+    displayName: 'Add Quick Links';
+    icon: 'cursor';
+  };
+  attributes: {
+    linkAddress: Schema.Attribute.String;
+    linkName: Schema.Attribute.String;
+  };
+}
+
+export interface FooterAddSocialMediaHandles extends Struct.ComponentSchema {
+  collectionName: 'components_footer_add_social_media_handles';
+  info: {
+    displayName: 'Add Social Media Handles';
+    icon: 'twitter';
+  };
+  attributes: {
+    socialMedia: Schema.Attribute.Enumeration<
+      ['Twitter (X)', 'Linkedin', 'Instagram', 'YouTube', 'Facebook']
+    >;
+    socialMediaLink: Schema.Attribute.String;
+  };
+}
+
+export interface HeaderNavBarMenu extends Struct.ComponentSchema {
+  collectionName: 'components_header_nav_bar_menus';
+  info: {
+    description: '';
+    displayName: 'Add New Navigation';
+    icon: 'bulletList';
+  };
+  attributes: {
+    pageLink: Schema.Attribute.String;
+    pageName: Schema.Attribute.String;
   };
 }
 
@@ -74,7 +112,10 @@ export interface PostsPostPrimaryDetails extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'author.author-name': AuthorAuthorName;
+      'author.author-details': AuthorAuthorDetails;
+      'footer.add-quick-links': FooterAddQuickLinks;
+      'footer.add-social-media-handles': FooterAddSocialMediaHandles;
+      'header.nav-bar-menu': HeaderNavBarMenu;
       'posts.post-meta-data': PostsPostMetaData;
       'posts.post-primary-details': PostsPostPrimaryDetails;
     }

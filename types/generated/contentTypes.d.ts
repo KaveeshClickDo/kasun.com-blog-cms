@@ -373,6 +373,79 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCustomFooterCustomFooter extends Struct.SingleTypeSchema {
+  collectionName: 'custom_footers';
+  info: {
+    description: '';
+    displayName: 'Custom Footer';
+    pluralName: 'custom-footers';
+    singularName: 'custom-footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    copyrightNotice: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    footerBgColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    footerFontColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    footerImage: Schema.Attribute.Media<'images'>;
+    footerQuickLinks: Schema.Attribute.DynamicZone<['footer.add-quick-links']>;
+    footerSocialMedia: Schema.Attribute.DynamicZone<
+      ['footer.add-social-media-handles']
+    >;
+    footerText: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::custom-footer.custom-footer'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCustomHeaderCustomHeader extends Struct.SingleTypeSchema {
+  collectionName: 'custom_headers';
+  info: {
+    description: '';
+    displayName: 'Custom Header';
+    pluralName: 'custom-headers';
+    singularName: 'custom-header';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    addHeaderNavigations: Schema.Attribute.DynamicZone<['header.nav-bar-menu']>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    headerBgColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    headerFontColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    headerImage: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::custom-header.custom-header'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPostPost extends Struct.CollectionTypeSchema {
   collectionName: 'posts';
   info: {
@@ -385,7 +458,7 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    authorDetails: Schema.Attribute.Component<'author.author-name', false> &
+    authorDetails: Schema.Attribute.Component<'author.author-details', false> &
       Schema.Attribute.Required;
     content: Schema.Attribute.RichText &
       Schema.Attribute.Required &
@@ -963,6 +1036,8 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::custom-footer.custom-footer': ApiCustomFooterCustomFooter;
+      'api::custom-header.custom-header': ApiCustomHeaderCustomHeader;
       'api::post.post': ApiPostPost;
       'api::website-metadata.website-metadata': ApiWebsiteMetadataWebsiteMetadata;
       'plugin::content-releases.release': PluginContentReleasesRelease;

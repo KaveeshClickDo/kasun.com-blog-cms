@@ -45,8 +45,8 @@
     "authorDetails": {
       "type": "component",
       "repeatable": false,
-      "required": true,
-      "component": "author.author-name"
+      "component": "author.author-details",
+      "required": true
     }
   }
 }

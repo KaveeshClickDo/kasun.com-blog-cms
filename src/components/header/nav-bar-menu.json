@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_header_nav_bar_menus",
+  "info": {
+    "displayName": "Add New Navigation",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "pageName": {
+      "type": "string"
+    },
+    "pageLink": {
+      "type": "string"
+    }
+  }
+}

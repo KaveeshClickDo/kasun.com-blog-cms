@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_footer_add_quick_links",
+  "info": {
+    "displayName": "Add Quick Links",
+    "icon": "cursor"
+  },
+  "options": {},
+  "attributes": {
+    "linkName": {
+      "type": "string"
+    },
+    "linkAddress": {
+      "type": "string"
+    }
+  }
+}

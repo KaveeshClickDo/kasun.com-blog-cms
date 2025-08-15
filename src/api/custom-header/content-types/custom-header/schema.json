@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "custom_headers",
+  "info": {
+    "singularName": "custom-header",
+    "pluralName": "custom-headers",
+    "displayName": "Custom Header",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "headerImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "headerBgColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "addHeaderNavigations": {
+      "type": "dynamiczone",
+      "components": [
+        "header.nav-bar-menu"
+      ]
+    },
+    "headerFontColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    }
+  }
+}
