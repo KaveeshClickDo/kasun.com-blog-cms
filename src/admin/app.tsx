@@ -1,5 +1,16 @@
+import AuthLogo from "./extensions/auth-logo.png";
+import MenuLogo from "./extensions/menu-logo.png";
+
 export default {
   config: {
+
+    auth: {
+      logo: AuthLogo,
+    },
+    menu: {
+      logo: MenuLogo,
+    },
+
     translations: {
       en: {
         'Auth.form.welcome.title': 'Welcome to SeekaHost',
