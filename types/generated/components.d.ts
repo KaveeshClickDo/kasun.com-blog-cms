@@ -77,6 +77,33 @@ export interface PostsPostPrimaryDetails extends Struct.ComponentSchema {
     displayName: 'Post Primary Details';
   };
   attributes: {
+    categories: Schema.Attribute.JSON &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        [
+          'BLOGGING',
+          'BUSINESS',
+          'EDUCATION',
+          'FINANCE',
+          'HOME & LIVING',
+          'INTERVIEW',
+          'LIFESTYLE',
+          'MARKETING',
+          'MOBILE ADVERTISING',
+          'SEO',
+          'TECHNOLOGY',
+          'TRAVELLING',
+        ]
+      > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 3;
+          min: 1;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<'[]'>;
     category: Schema.Attribute.Enumeration<
       [
         'BLOGGING',
