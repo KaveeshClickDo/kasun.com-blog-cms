@@ -18,11 +18,22 @@ export default {
         'HomePage.header.subtitle': 'Welcome to SeekaHost administration panel',
         'Auth.form.email.placeholder': 'e.g. kai@seekahost.co.uk',
         'HomePage.head.title': 'Admin',
+        'Global.strapi-branding': 'SeekaHost',
+        'Settings.profile.form.section.experience.interfaceLanguageHelp': 'Preference changes will apply only to you'
       },
+    },
+
+    tutorials: false,
+    notifications: {
+      releases: false,
+      plugins: false,
+      marketplace: false,
+      community: false,
+      security: true
     },
   },
   bootstrap() {
-   // Hide the marketplace menu item using CSS
+    // Hide the marketplace menu item using CSS
     const hideMarketplace = () => {
       const style = document.createElement('style');
       style.id = 'hide-marketplace-style';
@@ -56,24 +67,24 @@ export default {
           display: none !important;
         }
       `;
- 
+
       // Remove existing style if present
       const existingStyle = document.getElementById('hide-marketplace-style');
       if (existingStyle) {
         existingStyle.remove();
       }
- 
+
       document.head.appendChild(style);
     };
- 
+
     // Apply immediately and also after DOM changes
     hideMarketplace();
- 
+
     // Use MutationObserver to handle dynamic content loading
     const observer = new MutationObserver(() => {
       hideMarketplace();
     });
- 
+
     observer.observe(document.body, {
       childList: true,
       subtree: true
